@@ -34,7 +34,7 @@ body{
     border-radius:22px;
     box-shadow:0 25px 60px rgba(0,0,0,0.2);
     position:relative;
-    overflow:hidden;
+    overflow:visible;
 }
 
 /* ===== PÁGINAS ===== */
@@ -217,6 +217,26 @@ p{
     from{text-shadow:0 0 5px rgba(255,255,255,0.3);}
     to{text-shadow:0 0 15px rgba(255,255,255,0.8);}
 }
+    .page-final{
+    background-image: url("aliança.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.page-final::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.85);
+    z-index:0;
+}
+
+.page-final > *{
+    position:relative;
+    z-index:1;
+}
 
 </style>
 </head>
@@ -281,15 +301,13 @@ p{
 </p>
 </div>
 
-<div class="page">
-    <img src="aliança.jpeg" class="bg-img">
+<div class="page page-final">
     <h1 class="glow">Ainda não acabou…</h1>
     <p>
     Se aquele foi o nosso começo,<br>
     então isso aqui é só mais uma promessa silenciosa.
         Porque eu não escolhi você só para viver momentos bonitos.<br>
     Eu escolhi você para viver a vida inteira.
-</p>
     </p>
 
     <button onclick="showMessage()">Abrir meu coração</button>
@@ -402,6 +420,7 @@ function sparkleEffect(){
 </body>
 
 </html>
+
 
 
 
